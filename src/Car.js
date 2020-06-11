@@ -18,7 +18,7 @@ class Car extends React.Component {
     }
 
     render() {
-        return <li style={{color: this.state.color}} onClick={this.paint}>{this.state.brand} {this.state.model}!</li>;
+        return <li style={{color: this.state.color}}><a onClick={this.paint}>{this.state.brand} {this.state.model}</a> <button onClick={() => alert(this.state.year)}>Alert Year</button></li>;
     }
 }
 
