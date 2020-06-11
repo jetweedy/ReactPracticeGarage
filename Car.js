@@ -7,6 +7,9 @@ class Car extends React.Component {
         this.setState({ color:color });
         this.state.color = color;
     }
+    alertDirectArrow = (x, ev) => {
+        alert(x + " | " + ev.type);
+    }
     alertYearBound(x) {
         alert(x);
     }
@@ -30,7 +33,7 @@ class Car extends React.Component {
         return (<li style={{color: this.state.color}}>
             <a onClick={this.paint}>{this.state.brand} {this.state.model}</a>
             <br />
-            <button onClick={() => alert(this.state.year)}>Direct arrow function call</button>
+            <button onClick={(ev) => this.alertDirectArrow(this.state.year, ev)}>Direct arrow function call</button>
             <br />
             <button onClick={this.alertYearBound.bind(this,this.state.year)}>Bind argument to generate curried function.</button>
             <br />
